@@ -1,0 +1,22 @@
+Filename                                Description
+--------                                -----------
+jp_CAIGrHc.align                        PSIBLAST alignment with gaps and redundancy removed in FASTA format
+jp_CAIGrHc.als                          Alscript command file. Used to generate PS/PDF outputjp_CAIGrHc.blast.gz                     PSIBLAST output (compressed)
+jp_CAIGrHc.coils.csv                    The output from coils in CSV format
+jp_CAIGrHc.coilseq.lupas_14             The output from coils using a window length of 14
+jp_CAIGrHc.coilseq.lupas_21             The output from coils using a window length of 21
+jp_CAIGrHc.coilseq.lupas_28             The output from coils using a window length of 28
+jp_CAIGrHc.concise                      The prediction in pseudo-CSV format, including the coiled-coil prediction, solvent accessiblity and the sequence alignment
+jp_CAIGrHc.concise.blc                  A BLC file of the prediction and alignment
+jp_CAIGrHc.concise.pdf                  A PDF file of the prediction and alignment
+jp_CAIGrHc.fasta                        Input query sequence in FASTA format
+jp_CAIGrHc.full_MSA.fasta               The full multuple sequence alignment before JPred filters. Gaps/insertions shown. FASTA format.
+jp_CAIGrHc.hmm                          The HHMer2 profile of the alignment
+jp_CAIGrHc.html                         A HTML file of the prediction and alignment
+jp_CAIGrHc.jalview                      A Jalview annotation file to be read in with the .align file to view the predictions in Jalview
+jp_CAIGrHc.jnet                         The output from Jnet
+jp_CAIGrHc.profile                      PSIBLAST profile
+jp_CAIGrHc.pssm                         PSIBLAST PSSM in a format for Jnet
+jp_CAIGrHc.seq                          Your sequence
+jp_CAIGrHc.simple.html                  The brief HTML output of the query sequence and prediction only
+jp_CAIGrHc.svg.html                     A Jalview generated SVG file with summary of the results.

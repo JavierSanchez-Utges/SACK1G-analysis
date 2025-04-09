@@ -1,0 +1,154 @@
+## Running Jpred Server version 4.0.0 ##
+
+--/homes/www-jpred/live4_migration/bin/webrun -ipline 83.44.23.166 -log /homes/www-jpred/live4_migration/public_html/results/jp_CAIGrHc/LOG -sequence /homes/www-jpred/live4_migration/public_html/results/jp_CAIGrHc/jp_CAIGrHc.seq -format seq -id jp_CAIGrHc
+--TIMEOUT set at 10800 seconds
+--Started work on jp_CAIGrHc at Fri Apr  4 19:10:40 2025
+--On machine gpu-40.compute.dundee.ac.uk
+--format = seq
+>>10% complete
+SequenceBased_CheckingCache
+--Running Jpred pipeline
+--CMD /homes/www-jpred/live4_migration/jpred/jpred --seq jp_CAIGrHc.fasta --output jp_CAIGrHc --db uniref90 --pred-nohits --verbose
+DB is global.
+Host: gpu-40
+path: jp_CAIGrHc.fasta
+output: jp_CAIGrHc
+db: uniref90
+Time STEP0: 0
+Running PSI-BLAST on query against 'uniref.filt'...
+Time STEP1: 140
+Time STEP2: 140
+>>40% complete
+Untruncating the PSIBLAST alignments...
+Unmasking the alignments...
+Converting sequences to the same case...
+Remove excessive sequences...
+Remove sequences which too long or short...
+Remove redundant sequences...
+Removing gaps in the query sequence...
+Outputting cleaned-up PSI_BLAST alignment...
+Time STEP3: 177
+Output the PSSM matrix from the PSI-BLAST profile...
+>>50% complete
+Time STEP4: 177
+Running HMMer on sequences found by PSI-BLAST...
+hmmbuild - build a hidden Markov model from an alignment
+HMMER 2.3.2 (Oct 2003)
+Copyright (C) 1992-2003 HHMI/Washington University School of Medicine
+Freely distributed under the GNU General Public License (GPL)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Alignment file:                    /tmp/2391215.1.priority.q/bHvxZifQee
+File format:                       a2m
+Search algorithm configuration:    Multiple domain (hmmls)
+Model construction strategy:       Fast/ad hoc (gapmax 1.00)
+Null model used:                   (default)
+Prior used:                        (default)
+Sequence weighting method:         BLOSUM filter at 0.62 id
+New HMM file:                      /tmp/2391215.1.priority.q/TZkUIJDrmQ 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Alignment:           #1
+Number of sequences: 293
+Number of columns:   360
+
+Determining effective sequence number    ... done. [219]
+Weighting sequences heuristically        ... done.
+Constructing model architecture          ... done.
+Converting counts to probabilities       ... done.
+Setting model name, etc.                 ... done. [bHvxZifQee]
+
+Constructed a profile HMM (length 360)
+Average score:      185.86 bits
+Minimum score:       12.15 bits
+Maximum score:      529.03 bits
+Std. deviation:      87.50 bits
+
+Finalizing model configuration           ... done.
+Saving model to file                     ... done.
+//
+
+hmmconvert - convert between profile HMM file formats
+HMMER 2.3.2 (Oct 2003)
+Copyright (C) 1992-2003 HHMI/Washington University School of Medicine
+Freely distributed under the GNU General Public License (GPL)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Input HMM file:           /tmp/2391215.1.priority.q/TZkUIJDrmQ
+Output HMM file:          /tmp/2391215.1.priority.q/FgciZ7hTJy
+Converting to:            GCG Profile .prf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ - converted bHvxZifQee
+
+1 HMM(s) converted and written to /tmp/2391215.1.priority.q/FgciZ7hTJy
+>>70% complete
+Time STEP5: 177
+Running JNet using the generated inputs from HMM and PSI-BLAST...
+Jnet 2.3.1
+Found HMM profile data
+Found PSSM profile file
+Running final predictions!
+
+
+Both PSIBLAST and HMM profiles were found
+Accuracy will average 82.0%
+
+Jpred Finished
+Time STEP6: 177
+>>80% complete
+--Running ncoils and multicoil
+       1 sequences      360 aas        0 in coil
+       1 sequences      360 aas        0 in coil
+       1 sequences      360 aas        0 in coil
+>>90% complete
+--creating output
+"JNETALIGN" data not present
+UNIVERSAL->import is deprecated and will be removed in a future perl at /homes/www-jpred/new_site/jpred_new/lib/Sequence/File.pm line 7.
+
+ALSCRIPT  (ALignment to PostScript)
+ALSCRIPT Version 2.07d - 2nd August 2011
+
+See ALSCRIPT.DOC for details
+
+Please Reference: Barton, G. J. (1993), Protein Engineering, 6, 37-40.
+
+By: G. J. Barton
+
+Copyright: Geoffrey J. Barton (1992,1997)
+email: geoff@compbio.dundee.ac.uk
+
+Initial Defaults:
+Maximum number of sequences:	 500 	(Change using MAX_NSEQ command)
+Maximum sequence length:	 8000 	(Change using MAX_SEQ_LEN command)
+Maximum identifier length:	 50 	(Change using MAX_ID_LEN command)
+ALscript Command File: jp_CAIGrHc.als
+Starting ALSCRIPT
+SILENT_MODE
+Max No. of sequences now:	307
+ALscript Finished
+--tarring up the data
+>>100% complete
+--Finished work on jp_CAIGrHc at Fri Apr  4 19:15:47 2025
+--Execution time on jp_CAIGrHc is 307 seconds
+found jp_CAIGrHc.fasta
+Java version: 1.8.0_412
+amd64 Linux 3.10.0-1160.42.2.el7.x86_64
+Opening file: jp_CAIGrHc.fasta
+Apr 04, 2025 7:15:48 PM jalview.util.MessageManager <clinit>
+INFO: Getting messages for lang: en_GB
+java.awt.HeadlessException
+Added jp_CAIGrHc.concise
+java.io.IOException: Cannot run program "firefox": error=13, Permission denied
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at java.lang.Runtime.exec(Runtime.java:593)
+	at java.lang.Runtime.exec(Runtime.java:458)
+	at jalview.util.BrowserLauncher.openURL(BrowserLauncher.java:839)
+	at jalview.io.HtmlSvgOutput.generateHtmlSvgOutput(HtmlSvgOutput.java:109)
+	at jalview.io.HtmlSvgOutput.<init>(HtmlSvgOutput.java:38)
+	at jalview.bin.Jalview.main(Jalview.java:492)
+Caused by: java.io.IOException: error=13, Permission denied
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:247)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:134)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 6 more
+Creating HTML image: svg.html

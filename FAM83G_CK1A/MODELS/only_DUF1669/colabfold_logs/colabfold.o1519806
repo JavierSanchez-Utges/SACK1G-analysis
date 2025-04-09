@@ -1,0 +1,1818 @@
+Hostname: gpu-40.compute.dundee.ac.uk
+GPU: 0
+INPUT_DIR=.
+INPUT_FILE=fam83g_ck1a.fasta
+DB_PATH=/opt/colabfold/current
+VERSION=1.5.2
+MMSEQS_ARGS=
+COLABFOLD_ARGS=--model-type alphafold2_multimer_v3 --num-models 5 --rank multimer
+createdb /mnt/output/query.fas /mnt/output/qdb --shuffle 0 
+
+MMseqs Version:       	14.7e284
+Database type         	0
+Shuffle input database	false
+Createdb mode         	0
+Write lookup file     	1
+Offset of numeric ids 	0
+Compressed            	0
+Verbosity             	3
+
+Converting sequences
+[
+Time for merging to qdb_h: 0h 0m 0s 0ms
+Time for merging to qdb: 0h 0m 0s 1ms
+Database type: Aminoacid
+Time for processing: 0h 0m 0s 6ms
+Create directory /mnt/output/tmp
+search /mnt/output/qdb /mnt/db/uniref30_2202_db /mnt/output/res /mnt/output/tmp --threads 32 --num-iterations 3 --db-load-mode 0 -a -s 8 -e 0.1 --max-seqs 10000 
+
+MMseqs Version:                        	14.7e284
+Substitution matrix                    	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace                          	true
+Alignment mode                         	2
+Alignment mode                         	0
+Allow wrapped scoring                  	false
+E-value threshold                      	0.1
+Seq. id. threshold                     	0
+Min alignment length                   	0
+Seq. id. mode                          	0
+Alternative alignments                 	0
+Coverage threshold                     	0
+Coverage mode                          	0
+Max sequence length                    	65535
+Compositional bias                     	1
+Compositional bias                     	1
+Max reject                             	2147483647
+Max accept                             	2147483647
+Include identical seq. id.             	false
+Preload mode                           	0
+Pseudo count a                         	substitution:1.100,context:1.400
+Pseudo count b                         	substitution:4.100,context:5.800
+Score bias                             	0
+Realign hits                           	false
+Realign score bias                     	-0.2
+Realign max seqs                       	2147483647
+Correlation score weight               	0
+Gap open cost                          	aa:11,nucl:5
+Gap extension cost                     	aa:1,nucl:2
+Zdrop                                  	40
+Threads                                	32
+Compressed                             	0
+Verbosity                              	3
+Seed substitution matrix               	aa:VTML80.out,nucl:nucleotide.out
+Sensitivity                            	8
+k-mer length                           	0
+k-score                                	seq:2147483647,prof:2147483647
+Alphabet size                          	aa:21,nucl:5
+Max results per query                  	10000
+Split database                         	0
+Split mode                             	2
+Split memory limit                     	0
+Diagonal scoring                       	true
+Exact k-mer matching                   	0
+Mask residues                          	1
+Mask residues probability              	0.9
+Mask lower case residues               	0
+Minimum diagonal score                 	15
+Selected taxa                          	
+Spaced k-mers                          	1
+Spaced k-mer pattern                   	
+Local temporary path                   	
+Rescore mode                           	0
+Remove hits by seq. id. and coverage   	false
+Sort results                           	0
+Mask profile                           	1
+Profile E-value threshold              	0.1
+Global sequence weighting              	false
+Allow deletions                        	false
+Filter MSA                             	1
+Use filter only at N seqs              	0
+Maximum seq. id. threshold             	0.9
+Minimum seq. id.                       	0.0
+Minimum score per column               	-20
+Minimum coverage                       	0
+Select N most diverse seqs             	1000
+Pseudo count mode                      	0
+Gap pseudo count                       	10
+Min codons in orf                      	30
+Max codons in length                   	32734
+Max orf gaps                           	2147483647
+Contig start mode                      	2
+Contig end mode                        	2
+Orf start mode                         	1
+Forward frames                         	1,2,3
+Reverse frames                         	1,2,3
+Translation table                      	1
+Translate orf                          	0
+Use all table starts                   	false
+Offset of numeric ids                  	0
+Create lookup                          	0
+Add orf stop                           	false
+Overlap between sequences              	0
+Sequence split mode                    	1
+Header split mode                      	0
+Chain overlapping alignments           	0
+Merge query                            	1
+Search type                            	0
+Search iterations                      	3
+Start sensitivity                      	4
+Search steps                           	1
+Exhaustive search mode                 	false
+Filter results during exhaustive search	0
+Strand selection                       	1
+LCA search mode                        	false
+Disk space limit                       	0
+MPI runner                             	
+Force restart with latest tmp          	false
+Remove temporary files                 	false
+
+prefilter /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 96
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 10s 62ms
+
+41795.748180 k-mers per position
+70794118 DB matches per sequence
+2 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0: 0h 0m 0s 3ms
+Time for processing: 0h 1m 11s 36ms
+align /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_0 /mnt/output/tmp/17904136945034469464/aln_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 1 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score only
+Query database size: 2 type: Aminoacid
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 1s 606ms
+Time for merging to aln_0: 0h 0m 0s 2ms
+20000 alignments calculated
+9576 sequence pairs passed the thresholds (0.478800 of overall calculated)
+4788.000000 hits per query sequence
+Time for processing: 0h 0m 3s 779ms
+result2profile /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/profile_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 32053680 type: Aminoacid
+[=================================================================] 2 2s 279ms
+Time for merging to profile_0: 0h 0m 0s 2ms
+Time for processing: 0h 0m 3s 547ms
+prefilter /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 1s 508ms
+
+18741.811738 k-mers per position
+25234862 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1: 0h 0m 0s 0ms
+Time for processing: 0h 0m 48s 735ms
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/17904136945034469464/aln_0 ids from /mnt/output/tmp/17904136945034469464/pref_tmp_1
+[=================================================================] 2 0s 17ms
+Time for merging to pref_1: 0h 0m 0s 29ms
+Time for processing: 0h 0m 0s 93ms
+rmdb /mnt/output/tmp/17904136945034469464/pref_tmp_1 
+
+Time for processing: 0h 0m 0s 1ms
+align /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_1 /mnt/output/tmp/17904136945034469464/aln_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 1s 192ms
+Time for merging to aln_tmp_1: 0h 0m 0s 2ms
+13977 alignments calculated
+5279 sequence pairs passed the thresholds (0.377692 of overall calculated)
+2639.500000 hits per query sequence
+Time for processing: 0h 0m 2s 738ms
+mergedbs /mnt/output/tmp/17904136945034469464/profile_0 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/aln_tmp_1 
+
+Merging the results to /mnt/output/tmp/17904136945034469464/aln_1
+[=================================================================] 2 0s 1ms
+Time for merging to aln_1: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 5ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_0 
+
+Time for processing: 0h 0m 0s 2ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_tmp_1 
+
+Time for processing: 0h 0m 0s 1ms
+result2profile /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/profile_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+[=================================================================] 2 3s 427ms
+Time for merging to profile_1: 0h 0m 0s 1ms
+Time for processing: 0h 0m 4s 568ms
+prefilter /mnt/output/tmp/17904136945034469464/profile_1 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 1s 452ms
+
+14478.696397 k-mers per position
+20098575 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2: 0h 0m 0s 0ms
+Time for processing: 0h 0m 46s 159ms
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_2 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_2 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/17904136945034469464/aln_1 ids from /mnt/output/tmp/17904136945034469464/pref_tmp_2
+[=================================================================] 2 0s 18ms
+Time for merging to pref_2: 0h 0m 0s 20ms
+Time for processing: 0h 0m 0s 81ms
+rmdb /mnt/output/tmp/17904136945034469464/pref_tmp_2 
+
+Time for processing: 0h 0m 0s 0ms
+align /mnt/output/tmp/17904136945034469464/profile_1 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_2 /mnt/output/tmp/17904136945034469464/aln_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 0s 640ms
+Time for merging to aln_tmp_2: 0h 0m 0s 3ms
+10668 alignments calculated
+4607 sequence pairs passed the thresholds (0.431852 of overall calculated)
+2303.500000 hits per query sequence
+Time for processing: 0h 0m 2s 359ms
+mergedbs /mnt/output/tmp/17904136945034469464/profile_1 /mnt/output/res /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/aln_tmp_2 
+
+Merging the results to /mnt/output/res
+[=================================================================] 2 0s 1ms
+Time for merging to res: 0h 0m 0s 1ms
+Time for processing: 0h 0m 0s 11ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_1 
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_tmp_2 
+
+Time for processing: 0h 0m 0s 1ms
+expandaln /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp --db-load-mode 0 --threads 32 --expansion-mode 0 -e inf --expand-filter-clusters 1 --max-seq-id 0.95 
+
+MMseqs Version:           	14.7e284
+Expansion mode            	0
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Max sequence length       	65535
+Score bias                	0
+Compositional bias        	1
+Compositional bias        	1
+E-value threshold         	inf
+Seq. id. threshold        	0
+Coverage threshold        	0
+Coverage mode             	0
+Pseudo count mode         	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Expand filter clusters    	1
+Use filter only at N seqs 	0
+Maximum seq. id. threshold	0.95
+Minimum seq. id.          	0.0
+Minimum score per column  	-20
+Minimum coverage          	0
+Select N most diverse seqs	1000
+Preload mode              	0
+Compressed                	0
+Threads                   	32
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+[=================================================================] 2 19s 190ms
+Time for merging to res_exp: 0h 0m 0s 11ms
+Time for processing: 0h 0m 58s 42ms
+mvdb /mnt/output/tmp/latest/profile_1 /mnt/output/prof_res 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 1ms
+lndb /mnt/output/qdb_h /mnt/output/prof_res_h 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 1ms
+align /mnt/output/prof_res /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp /mnt/output/res_exp_realign --db-load-mode 0 -e 10 --max-accept 100000 --threads 32 --alt-ali 10 -a 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	true
+Alignment mode            	0
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	10
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	10
+Coverage threshold        	0
+Coverage mode             	0
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias        	1
+Max reject                	2147483647
+Max accept                	100000
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 306293517 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 41s 647ms
+Time for merging to res_exp_realign: 0h 0m 0s 1ms
+163568 alignments calculated
+156735 sequence pairs passed the thresholds (0.958225 of overall calculated)
+78367.500000 hits per query sequence
+Time for processing: 0h 1m 12s 303ms
+filterresult /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp_realign /mnt/output/res_exp_realign_filter --db-load-mode 0 --qid 0 --qsc 0.8 --diff 0 --threads 32 --max-seq-id 1.0 --filter-min-enable 100 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Compositional bias        	1
+Compositional bias        	1
+Allow deletions           	false
+Use filter only at N seqs 	100
+Maximum seq. id. threshold	1
+Minimum seq. id.          	0
+Minimum score per column  	0.8
+Minimum coverage          	0
+Select N most diverse seqs	0
+Preload mode              	0
+Threads                   	32
+Compressed                	0
+Include identical seq. id.	false
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 306293517 type: Aminoacid
+[=================================================================] 2 1s 255ms
+Time for merging to res_exp_realign_filter: 0h 0m 0s 1ms
+Time for processing: 0h 0m 14s 224ms
+result2msa /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp_realign_filter /mnt/output/uniref.a3m --msa-format-mode 6 --db-load-mode 0 --threads 32 --filter-msa 1 --filter-min-enable 1000 --diff 3000 --qid 0.0,0.2,0.4,0.6,0.8,1.0 --qsc 0 --max-seq-id 0.95 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Allow deletions           	false
+Compositional bias        	1
+Compositional bias        	1
+MSA format mode           	6
+Summary prefix            	cl
+Skip query                	false
+Filter MSA                	1
+Use filter only at N seqs 	1000
+Maximum seq. id. threshold	0.95
+Minimum seq. id.          	0.0,0.2,0.4,0.6,0.8,1.0
+Minimum score per column  	0
+Minimum coverage          	0
+Select N most diverse seqs	3000
+Preload mode              	0
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 306293517 type: Aminoacid
+[=================================================================] 2 2s 554ms
+Time for merging to uniref.a3m: 0h 0m 0s 4ms
+Time for processing: 0h 0m 17s 149ms
+rmdb /mnt/output/res_exp_realign 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 2ms
+rmdb /mnt/output/res_exp 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 7ms
+rmdb /mnt/output/res 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/res_exp_realign_filter 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 1ms
+search /mnt/output/prof_res /mnt/db/colabfold_envdb_202108_db /mnt/output/res_env /mnt/output/tmp --threads 32 --num-iterations 3 --db-load-mode 0 -a -s 8 -e 0.1 --max-seqs 10000 
+
+MMseqs Version:                        	14.7e284
+Substitution matrix                    	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace                          	true
+Alignment mode                         	2
+Alignment mode                         	0
+Allow wrapped scoring                  	false
+E-value threshold                      	0.1
+Seq. id. threshold                     	0
+Min alignment length                   	0
+Seq. id. mode                          	0
+Alternative alignments                 	0
+Coverage threshold                     	0
+Coverage mode                          	0
+Max sequence length                    	65535
+Compositional bias                     	1
+Compositional bias                     	1
+Max reject                             	2147483647
+Max accept                             	2147483647
+Include identical seq. id.             	false
+Preload mode                           	0
+Pseudo count a                         	substitution:1.100,context:1.400
+Pseudo count b                         	substitution:4.100,context:5.800
+Score bias                             	0
+Realign hits                           	false
+Realign score bias                     	-0.2
+Realign max seqs                       	2147483647
+Correlation score weight               	0
+Gap open cost                          	aa:11,nucl:5
+Gap extension cost                     	aa:1,nucl:2
+Zdrop                                  	40
+Threads                                	32
+Compressed                             	0
+Verbosity                              	3
+Seed substitution matrix               	aa:VTML80.out,nucl:nucleotide.out
+Sensitivity                            	8
+k-mer length                           	0
+k-score                                	seq:2147483647,prof:2147483647
+Alphabet size                          	aa:21,nucl:5
+Max results per query                  	10000
+Split database                         	0
+Split mode                             	2
+Split memory limit                     	0
+Diagonal scoring                       	true
+Exact k-mer matching                   	0
+Mask residues                          	1
+Mask residues probability              	0.9
+Mask lower case residues               	0
+Minimum diagonal score                 	15
+Selected taxa                          	
+Spaced k-mers                          	1
+Spaced k-mer pattern                   	
+Local temporary path                   	
+Rescore mode                           	0
+Remove hits by seq. id. and coverage   	false
+Sort results                           	0
+Mask profile                           	1
+Profile E-value threshold              	0.1
+Global sequence weighting              	false
+Allow deletions                        	false
+Filter MSA                             	1
+Use filter only at N seqs              	0
+Maximum seq. id. threshold             	0.9
+Minimum seq. id.                       	0.0
+Minimum score per column               	-20
+Minimum coverage                       	0
+Select N most diverse seqs             	1000
+Pseudo count mode                      	0
+Gap pseudo count                       	10
+Min codons in orf                      	30
+Max codons in length                   	32734
+Max orf gaps                           	2147483647
+Contig start mode                      	2
+Contig end mode                        	2
+Orf start mode                         	1
+Forward frames                         	1,2,3
+Reverse frames                         	1,2,3
+Translation table                      	1
+Translate orf                          	0
+Use all table starts                   	false
+Offset of numeric ids                  	0
+Create lookup                          	0
+Add orf stop                           	false
+Overlap between sequences              	0
+Sequence split mode                    	1
+Header split mode                      	0
+Chain overlapping alignments           	0
+Merge query                            	1
+Search type                            	0
+Search iterations                      	3
+Start sensitivity                      	4
+Search steps                           	1
+Exhaustive search mode                 	false
+Filter results during exhaustive search	0
+Strand selection                       	1
+LCA search mode                        	false
+Disk space limit                       	0
+MPI runner                             	
+Force restart with latest tmp          	false
+Remove temporary files                 	false
+
+prefilter /mnt/output/prof_res /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target split mode. Searching through 4 splits
+Estimated memory consumption: 154G
+Target database size: 209335862 type: Aminoacid
+Process prefiltering step 1 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 4)
+Query db start 1 to 2
+Target db start 1 to 51926069
+[=================================================================] 2 1s 26ms
+
+14478.696397 k-mers per position
+24962738 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0_tmp_0: 0h 0m 0s 0ms
+Time for merging to pref_0_tmp_0_tmp: 0h 0m 0s 5ms
+Process prefiltering step 2 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 2 of 4)
+Query db start 1 to 2
+Target db start 51926070 to 103828268
+[=================================================================] 2 1s 762ms
+
+14478.696397 k-mers per position
+24888540 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0_tmp_1: 0h 0m 0s 1ms
+Time for merging to pref_0_tmp_1_tmp: 0h 0m 0s 2ms
+Process prefiltering step 3 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 3 of 4)
+Query db start 1 to 2
+Target db start 103828269 to 156480033
+[=================================================================] 2 1s 667ms
+
+14478.696397 k-mers per position
+24721794 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0_tmp_2: 0h 0m 0s 316ms
+Time for merging to pref_0_tmp_2_tmp: 0h 0m 0s 2ms
+Process prefiltering step 4 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 4 of 4)
+Query db start 1 to 2
+Target db start 156480034 to 209335862
+[=================================================================] 2 2s 442ms
+
+14478.696397 k-mers per position
+24606264 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0_tmp_3: 0h 0m 0s 0ms
+Time for merging to pref_0_tmp_3_tmp: 0h 0m 0s 1ms
+Merging 4 target splits to pref_0
+Preparing offsets for merging: 0h 0m 0s 0ms
+[=================================================================] 2 0s 1ms
+Time for merging to pref_0: 0h 0m 0s 7ms
+Time for merging target splits: 0h 0m 0s 51ms
+Time for merging to pref_0_tmp: 0h 0m 0s 17ms
+Time for processing: 0h 6m 26s 548ms
+align /mnt/output/prof_res /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_0 /mnt/output/tmp/6937110372926209829/aln_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 1 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score only
+Query database size: 2 type: Profile
+Target database size: 209335862 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 4s 939ms
+Time for merging to aln_0: 0h 0m 0s 2ms
+21600 alignments calculated
+20385 sequence pairs passed the thresholds (0.943750 of overall calculated)
+10192.500000 hits per query sequence
+Time for processing: 0h 0m 20s 810ms
+result2profile /mnt/output/prof_res /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/aln_0 /mnt/output/tmp/6937110372926209829/profile_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target database size: 209335862 type: Aminoacid
+[=================================================================] 2 0s 850ms
+Time for merging to profile_0: 0h 0m 0s 1ms
+Time for processing: 0h 0m 7s 865ms
+prefilter /mnt/output/tmp/6937110372926209829/profile_0 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target split mode. Searching through 4 splits
+Estimated memory consumption: 154G
+Target database size: 209335862 type: Aminoacid
+Process prefiltering step 1 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 4)
+Query db start 1 to 2
+Target db start 1 to 51926069
+[=================================================================] 2 1s 438ms
+
+11660.254533 k-mers per position
+25364895 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1_tmp_0: 0h 0m 0s 0ms
+Time for merging to pref_tmp_1_tmp_0_tmp: 0h 0m 0s 2ms
+Process prefiltering step 2 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 2 of 4)
+Query db start 1 to 2
+Target db start 51926070 to 103828268
+[=================================================================] 2 2s 133ms
+
+11660.254533 k-mers per position
+25289291 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1_tmp_1: 0h 0m 0s 0ms
+Time for merging to pref_tmp_1_tmp_1_tmp: 0h 0m 0s 1ms
+Process prefiltering step 3 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 3 of 4)
+Query db start 1 to 2
+Target db start 103828269 to 156480033
+[=================================================================] 2 2s 453ms
+
+11660.254533 k-mers per position
+25092152 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1_tmp_2: 0h 0m 0s 0ms
+Time for merging to pref_tmp_1_tmp_2_tmp: 0h 0m 0s 1ms
+Process prefiltering step 4 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 4 of 4)
+Query db start 1 to 2
+Target db start 156480034 to 209335862
+[=================================================================] 2 3s 126ms
+
+11660.254533 k-mers per position
+24960842 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1_tmp_3: 0h 0m 0s 569ms
+Time for merging to pref_tmp_1_tmp_3_tmp: 0h 0m 0s 1ms
+Merging 4 target splits to pref_tmp_1
+Preparing offsets for merging: 0h 0m 0s 0ms
+========[=========================================================] 2 0s 1ms
+Time for merging to pref_tmp_1: 0h 0m 0s 4ms
+Time for merging target splits: 0h 0m 0s 40ms
+Time for merging to pref_tmp_1_tmp: 0h 0m 0s 9ms
+Time for processing: 0h 5m 6s 545ms
+subtractdbs /mnt/output/tmp/6937110372926209829/pref_tmp_1 /mnt/output/tmp/6937110372926209829/aln_0 /mnt/output/tmp/6937110372926209829/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/6937110372926209829/pref_tmp_1 /mnt/output/tmp/6937110372926209829/aln_0 /mnt/output/tmp/6937110372926209829/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/6937110372926209829/aln_0 ids from /mnt/output/tmp/6937110372926209829/pref_tmp_1
+[=================================================================] 2 0s 19ms
+Time for merging to pref_1: 0h 0m 0s 10ms
+Time for processing: 0h 0m 0s 72ms
+rmdb /mnt/output/tmp/6937110372926209829/pref_tmp_1 
+
+Time for processing: 0h 0m 0s 0ms
+align /mnt/output/tmp/6937110372926209829/profile_0 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_1 /mnt/output/tmp/6937110372926209829/aln_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 209335862 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 0s 640ms
+Time for merging to aln_tmp_1: 0h 0m 0s 1ms
+5463 alignments calculated
+5223 sequence pairs passed the thresholds (0.956068 of overall calculated)
+2611.500000 hits per query sequence
+Time for processing: 0h 0m 8s 783ms
+mergedbs /mnt/output/tmp/6937110372926209829/profile_0 /mnt/output/tmp/6937110372926209829/aln_1 /mnt/output/tmp/6937110372926209829/aln_0 /mnt/output/tmp/6937110372926209829/aln_tmp_1 
+
+Merging the results to /mnt/output/tmp/6937110372926209829/aln_1
+[=================================================================] 2 0s 1ms
+Time for merging to aln_1: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 5ms
+rmdb /mnt/output/tmp/6937110372926209829/aln_0 
+
+Time for processing: 0h 0m 0s 1ms
+rmdb /mnt/output/tmp/6937110372926209829/aln_tmp_1 
+
+Time for processing: 0h 0m 0s 0ms
+result2profile /mnt/output/tmp/6937110372926209829/profile_0 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/aln_1 /mnt/output/tmp/6937110372926209829/profile_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target database size: 209335862 type: Aminoacid
+[=================================================================] 2 1s 43ms
+Time for merging to profile_1: 0h 0m 0s 1ms
+Time for processing: 0h 0m 8s 574ms
+prefilter /mnt/output/tmp/6937110372926209829/profile_1 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target split mode. Searching through 4 splits
+Estimated memory consumption: 154G
+Target database size: 209335862 type: Aminoacid
+Process prefiltering step 1 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 4)
+Query db start 1 to 2
+Target db start 1 to 51926069
+[=================================================================] 2 1s 729ms
+
+10013.268904 k-mers per position
+23568580 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2_tmp_0: 0h 0m 0s 1ms
+Time for merging to pref_tmp_2_tmp_0_tmp: 0h 0m 0s 1ms
+Process prefiltering step 2 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 2 of 4)
+Query db start 1 to 2
+Target db start 51926070 to 103828268
+[=================================================================] 2 2s 779ms
+
+10013.268904 k-mers per position
+23495347 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2_tmp_1: 0h 0m 0s 0ms
+Time for merging to pref_tmp_2_tmp_1_tmp: 0h 0m 0s 0ms
+Process prefiltering step 3 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 3 of 4)
+Query db start 1 to 2
+Target db start 103828269 to 156480033
+[=================================================================] 2 2s 342ms
+
+10013.268904 k-mers per position
+23303404 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2_tmp_2: 0h 0m 0s 0ms
+Time for merging to pref_tmp_2_tmp_2_tmp: 0h 0m 0s 0ms
+Process prefiltering step 4 of 4
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 4 of 4)
+Query db start 1 to 2
+Target db start 156480034 to 209335862
+[=================================================================] 2 3s 106ms
+
+10013.268904 k-mers per position
+23172450 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+2700 sequences passed prefiltering per query sequence
+2700 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2_tmp_3: 0h 0m 0s 1ms
+Time for merging to pref_tmp_2_tmp_3_tmp: 0h 0m 0s 2ms
+Merging 4 target splits to pref_tmp_2
+Preparing offsets for merging: 0h 0m 0s 0ms
+[=================================================================] 2 0s 1ms
+Time for merging to pref_tmp_2: 0h 0m 0s 8ms
+Time for merging target splits: 0h 0m 0s 60ms
+Time for merging to pref_tmp_2_tmp: 0h 0m 0s 17ms
+Time for processing: 0h 4m 25s 165ms
+subtractdbs /mnt/output/tmp/6937110372926209829/pref_tmp_2 /mnt/output/tmp/6937110372926209829/aln_1 /mnt/output/tmp/6937110372926209829/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/6937110372926209829/pref_tmp_2 /mnt/output/tmp/6937110372926209829/aln_1 /mnt/output/tmp/6937110372926209829/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/6937110372926209829/aln_1 ids from /mnt/output/tmp/6937110372926209829/pref_tmp_2
+[=================================================================] 2 0s 25ms
+Time for merging to pref_2: 0h 0m 0s 4ms
+Time for processing: 0h 0m 0s 80ms
+rmdb /mnt/output/tmp/6937110372926209829/pref_tmp_2 
+
+Time for processing: 0h 0m 0s 0ms
+align /mnt/output/tmp/6937110372926209829/profile_1 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/tmp/6937110372926209829/pref_2 /mnt/output/tmp/6937110372926209829/aln_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 209335862 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 0s 107ms
+Time for merging to aln_tmp_2: 0h 0m 0s 1ms
+1818 alignments calculated
+1682 sequence pairs passed the thresholds (0.925193 of overall calculated)
+841.000000 hits per query sequence
+Time for processing: 0h 0m 7s 124ms
+mergedbs /mnt/output/tmp/6937110372926209829/profile_1 /mnt/output/res_env /mnt/output/tmp/6937110372926209829/aln_1 /mnt/output/tmp/6937110372926209829/aln_tmp_2 
+
+Merging the results to /mnt/output/res_env
+[=================================================================] 2 0s 1ms
+Time for merging to res_env: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 8ms
+rmdb /mnt/output/tmp/6937110372926209829/aln_1 
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/tmp/6937110372926209829/aln_tmp_2 
+
+Time for processing: 0h 0m 0s 0ms
+expandaln /mnt/output/prof_res /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/res_env /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/res_env_exp -e inf --expansion-mode 0 --db-load-mode 0 --threads 32 
+
+MMseqs Version:           	14.7e284
+Expansion mode            	0
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Max sequence length       	65535
+Score bias                	0
+Compositional bias        	1
+Compositional bias        	1
+E-value threshold         	inf
+Seq. id. threshold        	0
+Coverage threshold        	0
+Coverage mode             	0
+Pseudo count mode         	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Expand filter clusters    	0
+Use filter only at N seqs 	0
+Maximum seq. id. threshold	0.9
+Minimum seq. id.          	0.0
+Minimum score per column  	-20
+Minimum coverage          	0
+Select N most diverse seqs	1000
+Preload mode              	0
+Compressed                	0
+Threads                   	32
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+[=================================================================] 2 2s 639ms
+Time for merging to res_env_exp: 0h 0m 0s 2ms
+Time for processing: 0h 1m 16s 974ms
+align /mnt/output/tmp/latest/profile_1 /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/res_env_exp /mnt/output/res_env_exp_realign --db-load-mode 0 -e 10 --max-accept 100000 --threads 32 --alt-ali 10 -a 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	true
+Alignment mode            	0
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	10
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	10
+Coverage threshold        	0
+Coverage mode             	0
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias        	1
+Max reject                	2147483647
+Max accept                	100000
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 738695581 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 23s 604ms
+Time for merging to res_env_exp_realign: 0h 0m 0s 1ms
+213500 alignments calculated
+181440 sequence pairs passed the thresholds (0.849836 of overall calculated)
+90720.000000 hits per query sequence
+Time for processing: 0h 1m 4s 180ms
+filterresult /mnt/output/qdb /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/res_env_exp_realign /mnt/output/res_env_exp_realign_filter --db-load-mode 0 --qid 0 --qsc 0.8 --diff 0 --max-seq-id 1.0 --threads 32 --filter-min-enable 100 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Compositional bias        	1
+Compositional bias        	1
+Allow deletions           	false
+Use filter only at N seqs 	100
+Maximum seq. id. threshold	1
+Minimum seq. id.          	0
+Minimum score per column  	0.8
+Minimum coverage          	0
+Select N most diverse seqs	0
+Preload mode              	0
+Threads                   	32
+Compressed                	0
+Include identical seq. id.	false
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 738695581 type: Aminoacid
+[=================================================================] 2 2s 28ms
+Time for merging to res_env_exp_realign_filter: 0h 0m 0s 0ms
+Time for processing: 0h 0m 22s 615ms
+result2msa /mnt/output/qdb /mnt/db/colabfold_envdb_202108_db.idx /mnt/output/res_env_exp_realign_filter /mnt/output/bfd.mgnify30.metaeuk30.smag30.a3m --msa-format-mode 6 --db-load-mode 0 --threads 32 --filter-msa 1 --filter-min-enable 1000 --diff 3000 --qid 0.0,0.2,0.4,0.6,0.8,1.0 --qsc 0 --max-seq-id 0.95 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Allow deletions           	false
+Compositional bias        	1
+Compositional bias        	1
+MSA format mode           	6
+Summary prefix            	cl
+Skip query                	false
+Filter MSA                	1
+Use filter only at N seqs 	1000
+Maximum seq. id. threshold	0.95
+Minimum seq. id.          	0.0,0.2,0.4,0.6,0.8,1.0
+Minimum score per column  	0
+Minimum coverage          	0
+Select N most diverse seqs	3000
+Preload mode              	0
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 738695581 type: Aminoacid
+[=================================================================] 2 2s 461ms
+Time for merging to bfd.mgnify30.metaeuk30.smag30.a3m: 0h 0m 0s 4ms
+Time for processing: 0h 0m 42s 989ms
+rmdb /mnt/output/res_env_exp_realign_filter 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/res_env_exp_realign 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 3ms
+rmdb /mnt/output/res_env_exp 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 4ms
+rmdb /mnt/output/res_env 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+mergedbs /mnt/output/qdb /mnt/output/final.a3m /mnt/output/uniref.a3m /mnt/output/bfd.mgnify30.metaeuk30.smag30.a3m 
+
+MMseqs Version:       	14.7e284
+Merge prefixes        	
+Stop merge after empty	false
+Compressed            	0
+Verbosity             	3
+
+Merging the results to /mnt/output/final.a3m
+[=================================================================] 2 0s 8ms
+Time for merging to final.a3m: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 15ms
+rmdb /mnt/output/bfd.mgnify30.metaeuk30.smag30.a3m 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+unpackdb /mnt/output/final.a3m /mnt/output --unpack-name-mode 0 --unpack-suffix .a3m 
+
+MMseqs Version: 	14.7e284
+Unpack name mode	0
+Unpack suffix   	.a3m
+Threads         	64
+Verbosity       	3
+
+[=================================================================] 2 0s 592ms
+Time for processing: 0h 0m 0s 602ms
+rmdb /mnt/output/final.a3m 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/uniref.a3m 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/res 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+Create directory /mnt/output/tmp
+search /mnt/output/qdb /mnt/db/uniref30_2202_db /mnt/output/res /mnt/output/tmp --threads 32 --num-iterations 3 --db-load-mode 0 -a -s 8 -e 0.1 --max-seqs 10000 
+
+MMseqs Version:                        	14.7e284
+Substitution matrix                    	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace                          	true
+Alignment mode                         	2
+Alignment mode                         	0
+Allow wrapped scoring                  	false
+E-value threshold                      	0.1
+Seq. id. threshold                     	0
+Min alignment length                   	0
+Seq. id. mode                          	0
+Alternative alignments                 	0
+Coverage threshold                     	0
+Coverage mode                          	0
+Max sequence length                    	65535
+Compositional bias                     	1
+Compositional bias                     	1
+Max reject                             	2147483647
+Max accept                             	2147483647
+Include identical seq. id.             	false
+Preload mode                           	0
+Pseudo count a                         	substitution:1.100,context:1.400
+Pseudo count b                         	substitution:4.100,context:5.800
+Score bias                             	0
+Realign hits                           	false
+Realign score bias                     	-0.2
+Realign max seqs                       	2147483647
+Correlation score weight               	0
+Gap open cost                          	aa:11,nucl:5
+Gap extension cost                     	aa:1,nucl:2
+Zdrop                                  	40
+Threads                                	32
+Compressed                             	0
+Verbosity                              	3
+Seed substitution matrix               	aa:VTML80.out,nucl:nucleotide.out
+Sensitivity                            	8
+k-mer length                           	0
+k-score                                	seq:2147483647,prof:2147483647
+Alphabet size                          	aa:21,nucl:5
+Max results per query                  	10000
+Split database                         	0
+Split mode                             	2
+Split memory limit                     	0
+Diagonal scoring                       	true
+Exact k-mer matching                   	0
+Mask residues                          	1
+Mask residues probability              	0.9
+Mask lower case residues               	0
+Minimum diagonal score                 	15
+Selected taxa                          	
+Spaced k-mers                          	1
+Spaced k-mer pattern                   	
+Local temporary path                   	
+Rescore mode                           	0
+Remove hits by seq. id. and coverage   	false
+Sort results                           	0
+Mask profile                           	1
+Profile E-value threshold              	0.1
+Global sequence weighting              	false
+Allow deletions                        	false
+Filter MSA                             	1
+Use filter only at N seqs              	0
+Maximum seq. id. threshold             	0.9
+Minimum seq. id.                       	0.0
+Minimum score per column               	-20
+Minimum coverage                       	0
+Select N most diverse seqs             	1000
+Pseudo count mode                      	0
+Gap pseudo count                       	10
+Min codons in orf                      	30
+Max codons in length                   	32734
+Max orf gaps                           	2147483647
+Contig start mode                      	2
+Contig end mode                        	2
+Orf start mode                         	1
+Forward frames                         	1,2,3
+Reverse frames                         	1,2,3
+Translation table                      	1
+Translate orf                          	0
+Use all table starts                   	false
+Offset of numeric ids                  	0
+Create lookup                          	0
+Add orf stop                           	false
+Overlap between sequences              	0
+Sequence split mode                    	1
+Header split mode                      	0
+Chain overlapping alignments           	0
+Merge query                            	1
+Search type                            	0
+Search iterations                      	3
+Start sensitivity                      	4
+Search steps                           	1
+Exhaustive search mode                 	false
+Filter results during exhaustive search	0
+Strand selection                       	1
+LCA search mode                        	false
+Disk space limit                       	0
+MPI runner                             	
+Force restart with latest tmp          	false
+Remove temporary files                 	false
+
+prefilter /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 96
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 8s 686ms
+
+41795.748180 k-mers per position
+70794118 DB matches per sequence
+2 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0: 0h 0m 0s 0ms
+Time for processing: 0h 1m 42s 254ms
+align /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_0 /mnt/output/tmp/17904136945034469464/aln_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 1 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score only
+Query database size: 2 type: Aminoacid
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 1s 612ms
+Time for merging to aln_0: 0h 0m 0s 0ms
+20000 alignments calculated
+9576 sequence pairs passed the thresholds (0.478800 of overall calculated)
+4788.000000 hits per query sequence
+Time for processing: 0h 0m 4s 630ms
+result2profile /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/profile_0 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 32053680 type: Aminoacid
+[=================================================================] 2 2s 277ms
+Time for merging to profile_0: 0h 0m 0s 1ms
+Time for processing: 0h 0m 3s 644ms
+prefilter /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 1s 663ms
+
+18741.811738 k-mers per position
+25234862 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_1: 0h 0m 0s 1ms
+Time for processing: 0h 0m 56s 658ms
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/pref_1 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/17904136945034469464/aln_0 ids from /mnt/output/tmp/17904136945034469464/pref_tmp_1
+[=================================================================] 2 0s 24ms
+Time for merging to pref_1: 0h 0m 0s 9ms
+Time for processing: 0h 0m 0s 75ms
+rmdb /mnt/output/tmp/17904136945034469464/pref_tmp_1 
+
+Time for processing: 0h 0m 0s 0ms
+align /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_1 /mnt/output/tmp/17904136945034469464/aln_tmp_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 1s 204ms
+Time for merging to aln_tmp_1: 0h 0m 0s 0ms
+13977 alignments calculated
+5279 sequence pairs passed the thresholds (0.377692 of overall calculated)
+2639.500000 hits per query sequence
+Time for processing: 0h 0m 2s 886ms
+mergedbs /mnt/output/tmp/17904136945034469464/profile_0 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/aln_0 /mnt/output/tmp/17904136945034469464/aln_tmp_1 
+
+Merging the results to /mnt/output/tmp/17904136945034469464/aln_1
+[=================================================================] 2 0s 1ms
+Time for merging to aln_1: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 4ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_0 
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_tmp_1 
+
+Time for processing: 0h 0m 0s 0ms
+result2profile /mnt/output/tmp/17904136945034469464/profile_0 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/profile_1 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -e 0.1 --mask-profile 1 --e-profile 0.1 --comp-bias-corr 1 --comp-bias-corr-scale 1 --wg 0 --allow-deletion 0 --filter-msa 1 --filter-min-enable 0 --max-seq-id 0.9 --qid '0.0' --qsc -20 --cov 0 --diff 1000 --pseudo-cnt-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --db-load-mode 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --gap-pc 10 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+[=================================================================] 2 3s 437ms
+Time for merging to profile_1: 0h 0m 0s 1ms
+Time for processing: 0h 0m 4s 640ms
+prefilter /mnt/output/tmp/17904136945034469464/profile_1 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' --seed-sub-mat 'aa:VTML80.out,nucl:nucleotide.out' -s 8 -k 0 --k-score seq:2147483647,prof:2147483647 --alph-size aa:21,nucl:5 --max-seq-len 65535 --max-seqs 10000 --split 0 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --comp-bias-corr-scale 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-prob 0.9 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Profile
+Estimated memory consumption: 106G
+Target database size: 32053680 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 94
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 2
+Target db start 1 to 32053680
+[=================================================================] 2 1s 762ms
+
+14478.696397 k-mers per position
+20098575 DB matches per sequence
+0 overflows
+0 queries produce too many hits (truncated result)
+10000 sequences passed prefiltering per query sequence
+10000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_tmp_2: 0h 0m 0s 1ms
+Time for processing: 0h 0m 48s 177ms
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_2 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+subtractdbs /mnt/output/tmp/17904136945034469464/pref_tmp_2 /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/pref_2 --threads 32 --e-profile 0.1 -e 0.1 --compressed 0 -v 3 
+
+Remove /mnt/output/tmp/17904136945034469464/aln_1 ids from /mnt/output/tmp/17904136945034469464/pref_tmp_2
+[=================================================================] 2 0s 25ms
+Time for merging to pref_2: 0h 0m 0s 5ms
+Time for processing: 0h 0m 0s 72ms
+rmdb /mnt/output/tmp/17904136945034469464/pref_tmp_2 
+
+Time for processing: 0h 0m 0s 0ms
+align /mnt/output/tmp/17904136945034469464/profile_1 /mnt/db/uniref30_2202_db.idx /mnt/output/tmp/17904136945034469464/pref_2 /mnt/output/tmp/17904136945034469464/aln_tmp_2 --sub-mat 'aa:blosum62.out,nucl:nucleotide.out' -a 1 --alignment-mode 2 --alignment-output-mode 0 --wrapped-scoring 0 -e 0.1 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --comp-bias-corr-scale 1 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca substitution:1.100,context:1.400 --pcb substitution:4.100,context:5.800 --score-bias 0 --realign 0 --realign-score-bias -0.2 --realign-max-seqs 2147483647 --corr-score-weight 0 --gap-open aa:11,nucl:5 --gap-extend aa:1,nucl:2 --zdrop 40 --threads 32 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score, coverage and sequence identity
+Query database size: 2 type: Profile
+Target database size: 32053680 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 0s 639ms
+Time for merging to aln_tmp_2: 0h 0m 0s 1ms
+10668 alignments calculated
+4607 sequence pairs passed the thresholds (0.431852 of overall calculated)
+2303.500000 hits per query sequence
+Time for processing: 0h 0m 2s 485ms
+mergedbs /mnt/output/tmp/17904136945034469464/profile_1 /mnt/output/res /mnt/output/tmp/17904136945034469464/aln_1 /mnt/output/tmp/17904136945034469464/aln_tmp_2 
+
+Merging the results to /mnt/output/res
+[=================================================================] 2 0s 1ms
+Time for merging to res: 0h 0m 0s 0ms
+Time for processing: 0h 0m 0s 4ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_1 
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/tmp/17904136945034469464/aln_tmp_2 
+
+Time for processing: 0h 0m 0s 0ms
+expandaln /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp --db-load-mode 0 --threads 32 --expansion-mode 0 -e inf --expand-filter-clusters 0 --max-seq-id 0.95 
+
+MMseqs Version:           	14.7e284
+Expansion mode            	0
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Max sequence length       	65535
+Score bias                	0
+Compositional bias        	1
+Compositional bias        	1
+E-value threshold         	inf
+Seq. id. threshold        	0
+Coverage threshold        	0
+Coverage mode             	0
+Pseudo count mode         	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Expand filter clusters    	0
+Use filter only at N seqs 	0
+Maximum seq. id. threshold	0.95
+Minimum seq. id.          	0.0
+Minimum score per column  	-20
+Minimum coverage          	0
+Select N most diverse seqs	1000
+Preload mode              	0
+Compressed                	0
+Threads                   	32
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+[=================================================================] 2 3s 627ms
+Time for merging to res_exp: 0h 0m 0s 3ms
+Time for processing: 0h 0m 50s 877ms
+align /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp /mnt/output/res_exp_realign --db-load-mode 0 -e 0.001 --max-accept 1000000 --threads 32 -c 0.5 --cov-mode 1 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	false
+Alignment mode            	0
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	0.001
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	0
+Coverage threshold        	0.5
+Coverage mode             	1
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias        	1
+Max reject                	2147483647
+Max accept                	1000000
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score and coverage
+Query database size: 2 type: Aminoacid
+Target database size: 306293517 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 16s 832ms
+Time for merging to res_exp_realign: 0h 0m 0s 0ms
+393606 alignments calculated
+52992 sequence pairs passed the thresholds (0.134632 of overall calculated)
+26496.000000 hits per query sequence
+Time for processing: 0h 0m 36s 302ms
+pairaln /mnt/output/qdb /mnt/db/uniref30_2202_db /mnt/output/res_exp_realign /mnt/output/res_exp_realign_pair --db-load-mode 0 --threads 32 
+
+MMseqs Version:	14.7e284
+Preload mode	0
+Compressed  	0
+Threads     	32
+Verbosity   	3
+
+[=================================================================] 1 0s 10ms
+Time for merging to res_exp_realign_pair: 0h 0m 0s 4ms
+Time for processing: 0h 0m 1s 681ms
+align /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res_exp_realign_pair /mnt/output/res_exp_realign_pair_bt --db-load-mode 0 -e inf --threads 32 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Add backtrace             	false
+Alignment mode            	0
+Alignment mode            	0
+Allow wrapped scoring     	false
+E-value threshold         	inf
+Seq. id. threshold        	0
+Min alignment length      	0
+Seq. id. mode             	0
+Alternative alignments    	0
+Coverage threshold        	0
+Coverage mode             	0
+Max sequence length       	65535
+Compositional bias        	1
+Compositional bias        	1
+Max reject                	2147483647
+Max accept                	2147483647
+Include identical seq. id.	false
+Preload mode              	0
+Pseudo count a            	substitution:1.100,context:1.400
+Pseudo count b            	substitution:4.100,context:5.800
+Score bias                	0
+Realign hits              	false
+Realign score bias        	-0.2
+Realign max seqs          	2147483647
+Correlation score weight  	0
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Zdrop                     	40
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Compute score only
+Query database size: 2 type: Aminoacid
+Target database size: 306293517 type: Aminoacid
+Calculation of alignments
+[=================================================================] 2 0s 76ms
+Time for merging to res_exp_realign_pair_bt: 0h 0m 0s 0ms
+1652 alignments calculated
+1652 sequence pairs passed the thresholds (1.000000 of overall calculated)
+826.000000 hits per query sequence
+Time for processing: 0h 0m 13s 864ms
+pairaln /mnt/output/qdb /mnt/db/uniref30_2202_db /mnt/output/res_exp_realign_pair_bt /mnt/output/res_final --db-load-mode 0 --threads 32 
+
+MMseqs Version:	14.7e284
+Preload mode	0
+Compressed  	0
+Threads     	32
+Verbosity   	3
+
+[=================================================================] 1 0s 12ms
+Time for merging to res_final: 0h 0m 0s 5ms
+Time for processing: 0h 0m 0s 75ms
+result2msa /mnt/output/qdb /mnt/db/uniref30_2202_db.idx /mnt/output/res_final /mnt/output/pair.a3m --db-load-mode 0 --msa-format-mode 5 --threads 32 
+
+MMseqs Version:           	14.7e284
+Substitution matrix       	aa:blosum62.out,nucl:nucleotide.out
+Gap open cost             	aa:11,nucl:5
+Gap extension cost        	aa:1,nucl:2
+Allow deletions           	false
+Compositional bias        	1
+Compositional bias        	1
+MSA format mode           	5
+Summary prefix            	cl
+Skip query                	false
+Filter MSA                	0
+Use filter only at N seqs 	0
+Maximum seq. id. threshold	0.9
+Minimum seq. id.          	0.0
+Minimum score per column  	-20
+Minimum coverage          	0
+Select N most diverse seqs	1000
+Preload mode              	0
+Threads                   	32
+Compressed                	0
+Verbosity                 	3
+
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Index version: 16
+Generated by:  14.7e284
+ScoreMatrix:  VTML80.out
+Query database size: 2 type: Aminoacid
+Target database size: 306293517 type: Aminoacid
+[=================================================================] 2 0s 181ms
+Time for merging to pair.a3m: 0h 0m 0s 2ms
+Time for processing: 0h 0m 18s 771ms
+unpackdb /mnt/output/pair.a3m /mnt/output --unpack-name-mode 0 --unpack-suffix .paired.a3m 
+
+MMseqs Version: 	14.7e284
+Unpack name mode	0
+Unpack suffix   	.paired.a3m
+Threads         	64
+Verbosity       	3
+
+[=================================================================] 2 0s 13ms
+Time for processing: 0h 0m 0s 22ms
+rmdb /mnt/output/qdb 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 2ms
+rmdb /mnt/output/qdb_h 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 1ms
+rmdb /mnt/output/res 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/res_exp 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 8ms
+rmdb /mnt/output/res_exp_realign 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 1ms
+rmdb /mnt/output/res_exp_realign_pair 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 2ms
+rmdb /mnt/output/res_exp_realign_pair_bt 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/res_final 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 2ms
+rmdb /mnt/output/pair.a3m 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/qdb 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+rmdb /mnt/output/qdb_h 
+
+MMseqs Version:	14.7e284
+Verbosity	3
+
+Time for processing: 0h 0m 0s 0ms
+COLABFOLD_INPUT=/mnt/output/FAM83G_dimer__CK1a_subs.a3m
+2024-01-18 10:45:53,968 Running colabfold 1.5.2 (3e99c44eec189ec27f6d120af851adb7ff6aa2a2)
+2024-01-18 10:46:01,006 Running on GPU
+2024-01-18 10:46:01,798 Found 4 citations for tools or databases
+2024-01-18 10:46:01,798 Query 1/1: FAM83G_dimer__CK1a_subs (length 652)
+2024-01-18 10:46:14,561 Setting max_seq=508, max_extra_seq=2048
+2024-01-18 10:49:02,815 alphafold2_multimer_v3_model_1_seed_000 recycle=0 pLDDT=73.6 pTM=0.578 ipTM=0.507
+2024-01-18 10:50:36,542 alphafold2_multimer_v3_model_1_seed_000 recycle=1 pLDDT=76.6 pTM=0.611 ipTM=0.547 tol=9.99
+2024-01-18 10:52:10,043 alphafold2_multimer_v3_model_1_seed_000 recycle=2 pLDDT=82.7 pTM=0.778 ipTM=0.753 tol=3.85
+2024-01-18 10:53:43,743 alphafold2_multimer_v3_model_1_seed_000 recycle=3 pLDDT=83.6 pTM=0.809 ipTM=0.792 tol=1.25
+2024-01-18 10:55:17,565 alphafold2_multimer_v3_model_1_seed_000 recycle=4 pLDDT=84.2 pTM=0.82 ipTM=0.805 tol=0.661
+2024-01-18 10:56:51,151 alphafold2_multimer_v3_model_1_seed_000 recycle=5 pLDDT=84.3 pTM=0.819 ipTM=0.804 tol=0.979
+2024-01-18 10:58:24,806 alphafold2_multimer_v3_model_1_seed_000 recycle=6 pLDDT=84.6 pTM=0.822 ipTM=0.806 tol=1.02
+2024-01-18 10:59:58,702 alphafold2_multimer_v3_model_1_seed_000 recycle=7 pLDDT=84.8 pTM=0.824 ipTM=0.808 tol=1.05
+2024-01-18 11:01:32,222 alphafold2_multimer_v3_model_1_seed_000 recycle=8 pLDDT=84.9 pTM=0.824 ipTM=0.809 tol=0.67
+2024-01-18 11:03:05,690 alphafold2_multimer_v3_model_1_seed_000 recycle=9 pLDDT=85.2 pTM=0.827 ipTM=0.811 tol=0.854
+2024-01-18 11:04:39,215 alphafold2_multimer_v3_model_1_seed_000 recycle=10 pLDDT=85.3 pTM=0.828 ipTM=0.812 tol=0.762
+2024-01-18 11:06:12,748 alphafold2_multimer_v3_model_1_seed_000 recycle=11 pLDDT=85.5 pTM=0.829 ipTM=0.812 tol=0.82
+2024-01-18 11:07:46,243 alphafold2_multimer_v3_model_1_seed_000 recycle=12 pLDDT=85.5 pTM=0.829 ipTM=0.812 tol=1.17
+2024-01-18 11:09:19,738 alphafold2_multimer_v3_model_1_seed_000 recycle=13 pLDDT=85.6 pTM=0.828 ipTM=0.811 tol=0.625
+2024-01-18 11:10:53,212 alphafold2_multimer_v3_model_1_seed_000 recycle=14 pLDDT=85.7 pTM=0.829 ipTM=0.812 tol=0.485
+2024-01-18 11:10:53,242 alphafold2_multimer_v3_model_1_seed_000 took 1454.7s (14 recycles)
+2024-01-18 11:12:28,018 alphafold2_multimer_v3_model_2_seed_000 recycle=0 pLDDT=77.6 pTM=0.671 ipTM=0.627
+2024-01-18 11:14:01,402 alphafold2_multimer_v3_model_2_seed_000 recycle=1 pLDDT=81.6 pTM=0.775 ipTM=0.751 tol=3.35
+2024-01-18 11:15:34,795 alphafold2_multimer_v3_model_2_seed_000 recycle=2 pLDDT=82.3 pTM=0.776 ipTM=0.752 tol=1.55
+2024-01-18 11:17:08,191 alphafold2_multimer_v3_model_2_seed_000 recycle=3 pLDDT=81.9 pTM=0.767 ipTM=0.743 tol=5.41
+2024-01-18 11:18:41,566 alphafold2_multimer_v3_model_2_seed_000 recycle=4 pLDDT=82.7 pTM=0.783 ipTM=0.762 tol=4.19
+2024-01-18 11:20:14,990 alphafold2_multimer_v3_model_2_seed_000 recycle=5 pLDDT=82.1 pTM=0.764 ipTM=0.74 tol=2.62
+2024-01-18 11:21:48,337 alphafold2_multimer_v3_model_2_seed_000 recycle=6 pLDDT=82.6 pTM=0.778 ipTM=0.757 tol=0.793
+2024-01-18 11:23:21,687 alphafold2_multimer_v3_model_2_seed_000 recycle=7 pLDDT=82.2 pTM=0.761 ipTM=0.736 tol=0.388
+2024-01-18 11:23:21,715 alphafold2_multimer_v3_model_2_seed_000 took 747.0s (7 recycles)
+2024-01-18 11:24:56,617 alphafold2_multimer_v3_model_3_seed_000 recycle=0 pLDDT=74 pTM=0.495 ipTM=0.401
+2024-01-18 11:26:29,955 alphafold2_multimer_v3_model_3_seed_000 recycle=1 pLDDT=77.5 pTM=0.64 ipTM=0.583 tol=12.4
+2024-01-18 11:28:03,258 alphafold2_multimer_v3_model_3_seed_000 recycle=2 pLDDT=81.3 pTM=0.746 ipTM=0.719 tol=2
+2024-01-18 11:29:36,659 alphafold2_multimer_v3_model_3_seed_000 recycle=3 pLDDT=82.6 pTM=0.775 ipTM=0.753 tol=0.721
+2024-01-18 11:31:09,974 alphafold2_multimer_v3_model_3_seed_000 recycle=4 pLDDT=82.6 pTM=0.78 ipTM=0.76 tol=0.769
+2024-01-18 11:32:43,429 alphafold2_multimer_v3_model_3_seed_000 recycle=5 pLDDT=83.1 pTM=0.796 ipTM=0.779 tol=1.59
+2024-01-18 11:34:16,751 alphafold2_multimer_v3_model_3_seed_000 recycle=6 pLDDT=83.6 pTM=0.805 ipTM=0.789 tol=1.21
+2024-01-18 11:35:50,214 alphafold2_multimer_v3_model_3_seed_000 recycle=7 pLDDT=83.6 pTM=0.804 ipTM=0.789 tol=1.29
+2024-01-18 11:37:23,640 alphafold2_multimer_v3_model_3_seed_000 recycle=8 pLDDT=83.8 pTM=0.805 ipTM=0.79 tol=1.02
+2024-01-18 11:38:57,161 alphafold2_multimer_v3_model_3_seed_000 recycle=9 pLDDT=84.2 pTM=0.814 ipTM=0.799 tol=0.622
+2024-01-18 11:40:30,541 alphafold2_multimer_v3_model_3_seed_000 recycle=10 pLDDT=84.2 pTM=0.812 ipTM=0.797 tol=0.598
+2024-01-18 11:42:04,081 alphafold2_multimer_v3_model_3_seed_000 recycle=11 pLDDT=84.2 pTM=0.812 ipTM=0.797 tol=0.317
+2024-01-18 11:42:04,109 alphafold2_multimer_v3_model_3_seed_000 took 1120.9s (11 recycles)
+2024-01-18 11:43:39,059 alphafold2_multimer_v3_model_4_seed_000 recycle=0 pLDDT=73.4 pTM=0.52 ipTM=0.428
+2024-01-18 11:45:12,538 alphafold2_multimer_v3_model_4_seed_000 recycle=1 pLDDT=81 pTM=0.762 ipTM=0.734 tol=6.91
+2024-01-18 11:46:45,851 alphafold2_multimer_v3_model_4_seed_000 recycle=2 pLDDT=82.8 pTM=0.787 ipTM=0.765 tol=2.29
+2024-01-18 11:48:19,217 alphafold2_multimer_v3_model_4_seed_000 recycle=3 pLDDT=82.6 pTM=0.779 ipTM=0.757 tol=0.983
+2024-01-18 11:49:52,591 alphafold2_multimer_v3_model_4_seed_000 recycle=4 pLDDT=83.6 pTM=0.805 ipTM=0.789 tol=0.611
+2024-01-18 11:51:26,158 alphafold2_multimer_v3_model_4_seed_000 recycle=5 pLDDT=83.6 pTM=0.802 ipTM=0.786 tol=0.712
+2024-01-18 11:52:59,678 alphafold2_multimer_v3_model_4_seed_000 recycle=6 pLDDT=84.2 pTM=0.811 ipTM=0.796 tol=0.901
+2024-01-18 11:54:33,101 alphafold2_multimer_v3_model_4_seed_000 recycle=7 pLDDT=83.8 pTM=0.802 ipTM=0.787 tol=1.04
+2024-01-18 11:56:06,509 alphafold2_multimer_v3_model_4_seed_000 recycle=8 pLDDT=83.8 pTM=0.803 ipTM=0.788 tol=0.324
+2024-01-18 11:56:06,529 alphafold2_multimer_v3_model_4_seed_000 took 841.0s (8 recycles)
+2024-01-18 11:57:41,472 alphafold2_multimer_v3_model_5_seed_000 recycle=0 pLDDT=73 pTM=0.496 ipTM=0.4
+2024-01-18 11:59:14,845 alphafold2_multimer_v3_model_5_seed_000 recycle=1 pLDDT=79.5 pTM=0.747 ipTM=0.719 tol=8.48
+2024-01-18 12:00:48,171 alphafold2_multimer_v3_model_5_seed_000 recycle=2 pLDDT=81.8 pTM=0.772 ipTM=0.748 tol=1.64
+2024-01-18 12:02:21,795 alphafold2_multimer_v3_model_5_seed_000 recycle=3 pLDDT=82.2 pTM=0.791 ipTM=0.771 tol=1.39
+2024-01-18 12:03:55,177 alphafold2_multimer_v3_model_5_seed_000 recycle=4 pLDDT=82.6 pTM=0.804 ipTM=0.787 tol=1.96
+2024-01-18 12:05:28,687 alphafold2_multimer_v3_model_5_seed_000 recycle=5 pLDDT=82.9 pTM=0.807 ipTM=0.791 tol=3.2
+2024-01-18 12:07:02,322 alphafold2_multimer_v3_model_5_seed_000 recycle=6 pLDDT=83.2 pTM=0.812 ipTM=0.796 tol=1.38
+2024-01-18 12:08:35,711 alphafold2_multimer_v3_model_5_seed_000 recycle=7 pLDDT=83.4 pTM=0.81 ipTM=0.794 tol=0.331
+2024-01-18 12:08:35,731 alphafold2_multimer_v3_model_5_seed_000 took 747.7s (7 recycles)
+2024-01-18 12:08:37,149 reranking models by 'multimer' metric
+2024-01-18 12:08:37,150 rank_001_alphafold2_multimer_v3_model_1_seed_000 pLDDT=85.7 pTM=0.829 ipTM=0.812
+2024-01-18 12:08:37,152 rank_002_alphafold2_multimer_v3_model_3_seed_000 pLDDT=84.2 pTM=0.812 ipTM=0.797
+2024-01-18 12:08:37,153 rank_003_alphafold2_multimer_v3_model_5_seed_000 pLDDT=83.4 pTM=0.81 ipTM=0.794
+2024-01-18 12:08:37,154 rank_004_alphafold2_multimer_v3_model_4_seed_000 pLDDT=83.8 pTM=0.803 ipTM=0.788
+2024-01-18 12:08:37,156 rank_005_alphafold2_multimer_v3_model_2_seed_000 pLDDT=82.2 pTM=0.761 ipTM=0.736
+2024-01-18 12:08:45,477 Done
