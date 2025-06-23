@@ -2,6 +2,8 @@
 
 This repository includes the code and results of the computational analysis of our pre-print **_"Mutations within the predicted fragment-binding region of FAM83G/SACK1G abolish its interaction with the Ser/Thr kinase CK1α"_**, which can be found [here]().
 
+[![DOI](https://zenodo.org/badge/963186092.svg)](https://doi.org/10.5281/zenodo.15720596)
+
 Within the [`AFDB_FAM83B_model`](./AFDB_FAM83B_model) and [`AFDB_FAM83G_model`](./AFDB_FAM83G_model) directories, the AlphaFold DB models for human [SACK1B](https://alphafold.ebi.ac.uk/entry/Q5T0W9) ([Q5T0W9](https://www.uniprot.org/uniprotkb/Q5T0W9/entry)) and [SACK1G](https://alphafold.ebi.ac.uk/entry/A6ND36) ([A6ND36](https://www.uniprot.org/uniprotkb/A6ND36/entry)) can be found, respectively.
 
 The [`FAM83B_FRAGSYS`](./FAM83B_FRAGSYS) directory includes the necessary data from the FRAGSYS [[1](https://doi.org/10.1038/s42003-024-05970-8)] analysis of FAM83B/SACK1B, which was employed to hightlight the most likely sites to affect SACK1B function as well as the individual residues within them.
